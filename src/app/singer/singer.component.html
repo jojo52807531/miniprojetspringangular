@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="singerd shadow mb-4">
+    <div class="singerd-body">
+    <table class="table table-striped">
+    <tr> <th>Id</th><th>Singer name</th> <th>country</th> <th>Birth Date</th><th>Type</th><th>image</th><th>Actions</th> </tr>
+    <tbody *ngFor="let singer of singer">
+    <tr >
+    <td>{{singer.idSinger}}</td>
+    <td>{{singer.nomSinger}}</td>
+    <td>{{singer.paysSinger}}</td>
+    
+    <td>{{singer.dateFound | date:'dd/MM/yyyy'}}</td>
+    <td>{{singer.type.nomType}}</td>
+    <td><img class="singerd-img-top img-responsive"
+        src = "{{singer.imageStr}}"
+        style = "height :50px;width:100px">
+        </td>
+        
+    <td><a class="btn btn-danger" *ngIf="authService.isAdmin()" (click)="supprimersinger(singer)">Delete</a></td>
+    <td><a class="btn btn-success" *ngIf="authService.isAdmin()" [routerLink]="['/update-singer',singer.idSinger]">Update</a></td>
+    </tr>
+    </tbody>
+    
+    </table>
+    </div>
+    </div>
+    </div>

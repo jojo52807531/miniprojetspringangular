@@ -1,0 +1,28 @@
+<div class="container">
+    
+        <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+            <label>Type name</label>
+            <input type="text" class="form-control" [(ngModel)]="Types.nomType" name="nomType"  >
+            </div>
+            <div class="mt-2">
+        <button type="submit" (click)="AjouterTypes()"class="btn btn-success" >Add</button>
+        </div>
+
+    <div class="singerd shadow mb-4">
+    <div class="singerd-body">
+    <table class="table table-striped">
+    <thead>
+    <tr> <th>Id</th><th>Type name</th> </tr>
+    </thead>
+    <tbody *ngFor="let l of type">
+    <tr>
+    <td>{{l.idLeg}}</td>
+    <td>{{l.nomType}}</td>
+    <td><a class="btn btn-success" (click)="updateleg(l)">Edit</a></td>
+
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
